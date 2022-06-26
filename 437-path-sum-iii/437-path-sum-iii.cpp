@@ -18,7 +18,7 @@ public:
         return count;
     }
     
-    void preorder(TreeNode* root,vector<int>&v,int targetSum, int &count){
+    void preorder(TreeNode* root,vector<int>v,int targetSum, int &count){
         
         if(!root)return;
         
