@@ -33,6 +33,5 @@ public:
         preorder(root->left,v,targetSum,count);
         preorder(root->right,v,targetSum,count);
         
-        //v.pop_back();
     }
 };
