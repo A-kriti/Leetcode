@@ -14,32 +14,35 @@ public:
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
         
         vector<vector<int>>v;
+        vector<vector<int>>v1;
         vector<int>t;
-        preorder(root,v,t,targetSum);
-        return v;
+        preorder(root,v,t);
+        
+        int n=v.size();
+        
+        for(int i=0;i<n;i++){
+            int c=0;
+            for(int j=0;j<v[i].size();j++){
+                c+=v[i][j];
+            }
+            if(c==targetSum)v1.push_back(v[i]);
+        }
+        
+        return v1;
     }
     
-    void preorder(TreeNode* root,vector<vector<int>>&v,vector<int>t,int targetSum){
-        
+    void preorder(TreeNode* root,vector<vector<int>>&v,vector<int>t){
         
         if(!root)return;
         
         t.push_back(root->val);
         
-        
         if(root->left==NULL && root->right==NULL){
-            
-            int c=0;
-            for(int j=0;j<t.size();j++){
-                c+=t[j];
-            }
-            
-            if(c==targetSum)v.push_back(t);
+            v.push_back(t);
             return;
         }
-       
-        preorder(root->left,v,t,targetSum);
-        preorder(root->right,v,t,targetSum);
         
+        preorder(root->left,v,t);
+        preorder(root->right,v,t);
     }
 };
