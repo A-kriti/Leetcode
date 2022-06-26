@@ -22,6 +22,6 @@ public:
         
         if(!p && q || p && !q || q->val!=p->val)return false;
          
-         return checkif(p->left,q->left) & checkif(p->right,q->right);
+         return checkif(p->left,q->left) && checkif(p->right,q->right);
     }
 };
