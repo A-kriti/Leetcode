@@ -14,35 +14,27 @@ public:
     string tree2str(TreeNode* root) {
         
         string s="";
-        preorder(root,s);
+        preorder(root, s);
         return s;
     }
     
-    void preorder(TreeNode* root,string &s){
+    void preorder(TreeNode* root, string &s){
         
-        char y='(';
-        char z=')';
+        if(!root)return;
         
-        if(!root){
-            return;   
-        }
-       
         int t=root->val;
-        string x=to_string(t);
-        s+=x;
+        s+=to_string(t);
         
         if(root->left==NULL && root->right==NULL)return;
         
-        s+=y;
+        s+="(";
         preorder(root->left,s);
-        s+=z;
-        
+        s+=")";
         
         if(root->right){
-            s+=y;
+             s+="(";
             preorder(root->right,s);
-            s+=z;
+            s+=")";
         }
-        
     }
 };
