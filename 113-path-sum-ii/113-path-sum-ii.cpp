@@ -16,33 +16,44 @@ public:
         vector<vector<int>>v;
         vector<vector<int>>v1;
         vector<int>t;
-        preorder(root,v,t);
+        preorder(root,v,t,targetSum);
         
-        int n=v.size();
+//         int n=v.size();
         
-        for(int i=0;i<n;i++){
-            int c=0;
-            for(int j=0;j<v[i].size();j++){
-                c+=v[i][j];
-            }
-            if(c==targetSum)v1.push_back(v[i]);
-        }
+//         for(int i=0;i<n;i++){
+//             int c=0;
+//             for(int j=0;j<v[i].size();j++){
+//                 c+=v[i][j];
+//             }
+//             if(c==targetSum)v1.push_back(v[i]);
+//         }
         
-        return v1;
+        return v;
     }
     
-    void preorder(TreeNode* root,vector<vector<int>>&v,vector<int>t){
+    void preorder(TreeNode* root,vector<vector<int>>&v,vector<int>t,int targetSum){
+        
         
         if(!root)return;
         
         t.push_back(root->val);
         
+        
         if(root->left==NULL && root->right==NULL){
-            v.push_back(t);
+            //v.push_back(t);
+            int c=0;
+            for(int j=0;j<t.size();j++){
+                c+=t[j];
+            }
+            
+            if(c==targetSum)v.push_back(t);
             return;
         }
         
-        preorder(root->left,v,t);
-        preorder(root->right,v,t);
+        //t.pop_back();
+        
+        preorder(root->left,v,t,targetSum);
+        preorder(root->right,v,t,targetSum);
+        
     }
 };
