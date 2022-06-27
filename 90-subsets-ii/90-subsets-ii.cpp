@@ -1,36 +1,27 @@
 class Solution {
 public:
-    vector<vector<int>> ans;
-    
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        
         sort(nums.begin(),nums.end());
-        int i=0;
         vector<int>subset;
-        bool pre=false;
-        generate(nums,i,subset,pre);
+        vector<vector<int>>ans;
+        int i=0;
+        genrate(nums,subset,ans,i);
+        
         
         return ans;
     }
     
-    void generate(vector<int>& nums,int i,vector<int>&subset,bool pre){
-
-        
-        if(i==nums.size()){
-            ans.push_back(subset);
-            return;
+    void genrate(vector<int>& nums,vector<int>& subset,vector<vector<int>>& ans,int i){
+      
+        ans.push_back(subset);  
+        for(int j=i;j<nums.size();j++){
+            
+            if(i!=j && nums[j]==nums[j-1])continue;
+            subset.push_back(nums[j]);
+            genrate(nums,subset,ans,j+1);
+            subset.pop_back();
         }
-        
-        //exclude nums[i];
-        generate(nums,i+1,subset,false);
-        
-        if(i>0 && nums[i]==nums[i-1] && !pre)return;
-        
-        subset.push_back(nums[i]);
-        //include nums[i];
-        generate(nums,i+1,subset,true);
-        subset.pop_back(); //backtrack
-        
-        
+            
     }
-    
 };
