@@ -13,17 +13,7 @@ public:
     }
     
     void generate(vector<int>& nums,int i,vector<int>&subset,bool pre){
-        
-//         ans.push_back(subset);
-        
-//         for(int j=i;j<nums.size();j++){
-            
-//             if(j!=i && nums[j]==nums[j-1])continue;
-            
-//             subset.push_back(nums[j]);
-//             generate(nums,j+1,subset);
-//             subset.pop_back();
-//         }
+
         
         if(i==nums.size()){
             ans.push_back(subset);
