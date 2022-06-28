@@ -24,7 +24,6 @@ class Solution{
                 else l=mid+1;
             }
             
-            //else if(A[h]>=A[mid]){
             else{
                 
                 if(A[h]>=key && A[mid]<key){
