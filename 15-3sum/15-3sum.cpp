@@ -18,7 +18,7 @@ public:
                 
                 if(nums[j]+nums[k]==t){
                     ans.push_back({nums[i],nums[j],nums[k]});
-                    while(j<k && nums[i]==nums[j+1])j++;
+                    while(j<k && nums[j]==nums[j+1])j++;
                     while(j<k && nums[k]==nums[k-1])k--;
                     j++;
                     k--;
