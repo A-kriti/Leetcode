@@ -15,22 +15,16 @@ class Solution{
         
         while(j<=n){
             
-            //if(t.empty())t+=S[i];
-            
             if(S[i]!=S[j]){
                 t+=S[i];
                 
-            }
+}
             
             i++;
             j++;
-            // else {
-                
-            //     i++;
-            //     j++;
-            // }
         }
         
+        //Method 2
         // for(int i=0;i<n;i++){
         //     if(S[i]!=S[i+1])t+=S[i];
         // }
