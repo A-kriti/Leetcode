@@ -21,17 +21,19 @@ public:
         
         while(!q.empty()){
             int n=q.size();
-            vector<int>x;
+            vector<int>z;
             for(int i=0;i<n;i++){
                 TreeNode* t=q.front();
                 q.pop();
-                x.push_back(t->val);
+                z.push_back(t->val);
                 
-                if(t->left)q.push(t->left); 
+                if(t->left)q.push(t->left);
                 if(t->right)q.push(t->right);
-            }
-            v.push_back(x);
+                
+            } 
+            v.push_back(z);
         }
+        
         
         return v;
     }
