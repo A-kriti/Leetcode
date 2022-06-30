@@ -5,11 +5,6 @@ public:
         int r=nums.size()-1;
         int l=0;
         
-        // if(r==1){
-        //     if(nums[0]==target)return 0;
-        //     else return -1;
-        // }
-        
         while(l<=r){
             int mid=(l+r)/2;
             
