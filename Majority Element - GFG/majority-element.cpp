@@ -26,11 +26,10 @@ class Solution{
             v[a[i]]++;
         }
         
-        //int max_freq=0;
         for(int i=0;i<1000000;i++){
             
             if(v[i]>(size/2))return i;
-            //max_freq=max(max_freq,v[i]);
+            
         }
         
         return -1;
