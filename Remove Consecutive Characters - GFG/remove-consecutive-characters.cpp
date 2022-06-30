@@ -17,8 +17,7 @@ class Solution{
             
             if(S[i]!=S[j]){
                 t+=S[i];
-                
-}
+            }
             
             i++;
             j++;
