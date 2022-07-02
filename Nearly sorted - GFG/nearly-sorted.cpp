@@ -10,23 +10,26 @@ class Solution
     //Function to return the sorted array.
     vector <int> nearlySorted(int arr[], int num, int K){
         // Your code here
-        priority_queue<int,vector<int>,greater<int>>p;
-        vector <int>ans;
+        priority_queue<int,vector <int>,greater<int>>p;
+        vector <int>v;
         
         for(int i=0;i<num;i++){
+            
             p.push(arr[i]);
             
             if(p.size()>K){
-                ans.push_back(p.top());
+                v.push_back(p.top());
                 p.pop();
             }
+           
         }
         
-        while(p.size()>0){
-            ans.push_back(p.top());
+        while(!p.empty()){
+            v.push_back(p.top());
             p.pop();
         }
-        return ans;
+        
+        return v;
     }
 };
 
