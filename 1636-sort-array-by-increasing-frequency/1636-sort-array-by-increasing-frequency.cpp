@@ -1,25 +1,10 @@
-// class Compare
-// {
-// public:
-//     // bool operator() (Foo, Foo)
-//     // {
-//     //     return true;
-//     // }
-//     bool cmp(pair<int,int>a,pair<int,int>b){
-        
-//         if(a.first!=b.first)return a.first>b.first;
-//         //else if(a.first<b.first)return false;
-//         return(a.second>b.second)?true:false;
-        
-//     }
-// };
-
 class Solution {
 public:
     static bool cmp(pair<int,int>a,pair<int,int>b){
         
-        if(a.first!=b.first)return a.first<b.first;
-        //else if(a.first<b.first)return false;
+        if(a.first!=b.first)
+            return a.first<b.first;
+        
         return(a.second>b.second)?true:false;
         
     }
@@ -44,13 +29,7 @@ public:
                 v.push_back(x.second);
             }
         }
-//         while(!p.empty()){
-            
-//             for(int i=0;i<p.top().first;i++){
-//                 v.push_back(p.top().second);
-//             }
-//             p.pop();
-//         }
+
         return v;
     }
 };
