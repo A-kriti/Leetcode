@@ -15,10 +15,10 @@ class Solution{
         vector <int>ans;
         
         if(k==1)
-       {
-           vector<int>ans(n,1);
-           return ans;
-       }
+      {
+          vector<int>ans(n,1);
+          return ans;
+      }
        
         int i=0;
         int j=1;
