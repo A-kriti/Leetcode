@@ -10,11 +10,7 @@ long long int count(long long int n)
 {
 	long long int t[4][n+1],i,j;
 	memset(t, -1, sizeof(t));
-// 	table[0]=0;                 // If 0 sum is required number of ways is 1.
-// 	table[1]=0;
-// 	table[2]=0;
-	
-	// Your code here
+
 	vector<int>v={3,5,10};
 
     for(i=0;i<4;i++){
