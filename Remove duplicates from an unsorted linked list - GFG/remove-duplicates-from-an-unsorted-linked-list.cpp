@@ -51,7 +51,6 @@ class Solution
          m[curr->data]++;
          if(m.find(curr->next->data)!=m.end()){
              curr->next=curr->next->next;
-             //curr=curr->next->next;
          }
          
          else curr=curr->next;
