@@ -10,6 +10,7 @@ class Solution {
 public:
     bool hasCycle(ListNode *head) {
         
+        //O(N)
 //         map<ListNode *,int>m;
 //         ListNode *curr=head;
         
@@ -28,6 +29,7 @@ public:
         
 //         return false;
         
+        //O(1)
         ListNode *slow=head;
         ListNode *fast=head;
         
