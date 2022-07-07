@@ -8,18 +8,10 @@ class Solution {
   public:
     vector<int> max_of_subarrays(vector<int> arr, int n, int k) {
         // your code here
-        
-        
-        // if(k==1)return arr;
-        // if(n<=k){
-        //     int t=*max_element(arr.begin(),arr.end());
-        //     return {t};
-        // }
-        vector<int>ans;
-        list<int>l;
         int i=0;
         int j=0;
-
+        vector<int>ans;
+        list<int>l;
         
         while(j<n){
             
@@ -29,15 +21,14 @@ class Solution {
             l.push_back(arr[j]);
             
             if(j-i+1==k){
-              
                 ans.push_back(l.front());
-                if(l.front()==arr[i]){
                 
+                if(l.front()==arr[i]){
                     l.pop_front();
                 }
-                
                 i++;
             }
+            
             j++;
         }
         
