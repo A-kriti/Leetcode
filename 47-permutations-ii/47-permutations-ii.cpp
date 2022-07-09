@@ -1,40 +1,36 @@
 class Solution {
 public:
-    void permute(vector<int>& nums,int l,vector<vector<int>>&v){
+    
+    void permute(vector<int>& nums,vector<vector<int>>&ans, int l){
         
         int r=nums.size()-1;
-        
+        unordered_set<int>s;
         if(l==r){
-            v.push_back(nums);
+            ans.push_back(nums);
             return;
         }
         
         else{
-            
             for(int i=l;i<=r;i++){
-                swap(nums[i],nums[l]);
-                permute(nums,l+1,v);
-                swap(nums[i],nums[l]);
+                if(s.find(nums[i])!=s.end())
+                    continue;
+                
+                else{
+                    s.insert(nums[i]);
+                    swap(nums[i],nums[l]);
+                    permute(nums,ans,l+1);
+                    swap(nums[i],nums[l]);
+                }
+                
             }
         }
     }
     
     vector<vector<int>> permuteUnique(vector<int>& nums) {
         
+        vector<vector<int>>ans;
         int l=0;
-        vector<vector<int>>v;
-        permute(nums,l,v);
-        
-        map<vector<int>,int>m;
-        for(auto x:v){
-            m[x]++;
-        }
-        
-        vector<vector<int>> v1;
-        for(auto x:m){
-            v1.push_back(x.first);
-        }
-        
-        return v1;
+        permute(nums,ans,l);
+        return ans;
     }
 };
