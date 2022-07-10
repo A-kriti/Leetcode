@@ -76,18 +76,15 @@ class Solution{
         for(int i=0;i<n;i++){
             int t=arr[i];
             if(i%2==0){
-                //e+=to_string(t);
+                
                 x=x*10+t;
             }
             else{
-                //o+=to_string(t);
+                
                 y=y*10+t;
             }
         }
-        
-        // long long int x=stoi(e);
-        // long long int y=stoi(o);
-        
+       
         return x+y;
     }
 };
