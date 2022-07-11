@@ -12,10 +12,6 @@ class Solution{
 public:
     int maxEqualSum(int N1,int N2,int N3,vector<int> &S1,vector<int> &S2,vector<int> &S3){
         
-        // sort(S1.begin(),S1.end());
-        // sort(S2.begin(),S2.end());
-        // sort(S3.begin(),S3.end());
-        
         int i=0;
         int j=0;
         int k=0;
@@ -38,7 +34,7 @@ public:
             if(c1==c2 && c2==c3){
                 return c1;
             }
-            //int t=max(c1,max(c2,c3));
+            
             else if(c1>c2 || c1>c3){
                 c1-=S1[i];
                 i++;
