@@ -30,23 +30,7 @@ class Solution{
         
         int x=max_power(n);
         
-        ans+=((x*(1<<(x-1)))+(n-((1<<x)-1)+countSetBits((n-(1<<x)))));
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //ans+=(x*(1<<(x-1))+n-((1<<x)-1)+countSetBits(n-(1<<x)));
+        ans+=(x*(1<<(x-1))+n-((1<<x)-1)+countSetBits(n-(1<<x)));
         return ans;
     }
 };
