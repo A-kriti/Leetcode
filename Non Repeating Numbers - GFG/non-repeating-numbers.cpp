@@ -10,8 +10,8 @@ public:
     {
         // Code here.
         int xor_sum=0;
-        for(int i=0;i<nums.size();i++){
-            xor_sum^=nums[i];
+        for(int x:nums){
+            xor_sum^=x;
         }
         
         //Xor
@@ -25,13 +25,13 @@ public:
         
         int y=xor_sum & ~(xor_sum-1); //gives right most set bit
         
-        for(int i=0;i<nums.size();i++){
+        for(int x:nums){
             
-            if((nums[i]&y)!=0){
-                r1^=nums[i];
+            if((x&y)!=0){
+                r1^=x;
             }
             
-            else r2^=nums[i];
+            else r2^=x;
         }
         if(r1>r2)return {r2,r1};
         return {r1,r2};
