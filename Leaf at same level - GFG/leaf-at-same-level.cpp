@@ -99,13 +99,18 @@ struct Node
 class Solution{
   public:
     /*You are required to complete this method*/
-    unordered_map<int,int>m;
+    //unordered_map<int,int>m;
+    int c=-1;
+    int x=1;
     void height(Node * root,int l){
         
         if(!root)return;
         
         if(root->left==NULL && root ->right==NULL){
-            m[l]++;
+            //m[l]++;
+            if(c==-1)c=l;
+            else if(c!=l)x=0;
+            
             return;
         }
         
@@ -130,8 +135,8 @@ class Solution{
         
         // return abs(l-r)==0 && check(root->left) && check(root->right);
         height(root,1);
-        return (m.size()==1);
-        
+        //return (m.size()==1);
+        return x;
         
     }
     
