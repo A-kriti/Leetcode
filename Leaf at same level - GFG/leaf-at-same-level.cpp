@@ -99,7 +99,7 @@ struct Node
 class Solution{
   public:
     /*You are required to complete this method*/
-    //unordered_map<int,int>m;
+    
     int c=-1;
     int x=1;
     void height(Node * root,int l){
@@ -107,48 +107,26 @@ class Solution{
         if(!root)return;
         
         if(root->left==NULL && root ->right==NULL){
-            //m[l]++;
+           
             if(c==-1)c=l;
             else if(c!=l)x=0;
             
             return;
         }
         
-        //l=max(height(root->left,l+1),height(root->right,l+1))+1;
         height(root->left,l+1);
         height(root->right,l+1);
 
-        //return l;
-        
     }
     
     bool check(Node *root)
     {
-        //Your code here
-        // if(!root)return 1;
-        
-        // //if(!root->left && root->right || root->left && !root->right)return 0;
-        // int l=height(root->left);
-        // int r=height(root->right);
-        
-        // //if(l!=r)return 0;
-        
-        // return abs(l-r)==0 && check(root->left) && check(root->right);
+       
         height(root,1);
-        //return (m.size()==1);
         return x;
         
     }
-    
-    // bool check(Node *root)
-    // {
-    //     //Your code here
-    //     if(!root)return 1;
-        
-    //     if(!root->left && root->right || root->left && !root->right)return 0;
-        
-    //     return check(root->left) && check(root->right);
-    // }
+   
 };
 
 // { Driver Code Starts.
