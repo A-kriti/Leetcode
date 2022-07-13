@@ -48,7 +48,6 @@ class Solution
     
     if(ans.size()==curr){
         ans.push_back(root->data);
-        //max_curr=curr;
     }
     preorder(root->right,ans,curr+1);
     preorder(root->left,ans,curr+1);
@@ -58,11 +57,36 @@ class Solution
     vector<int> rightView(Node *root)
     {
        // Your Code here
-       //int max_curr=INT_MIN;
        vector<int>ans;
        preorder(root,ans,0);
        return ans;
     }
+    
+    //method 2
+    
+//     void preorder(Node *root,vector<int>&ans,int &max_curr,int curr){
+    
+    
+//     if(!root)return;
+    
+//     if(max_curr<curr){
+//         ans.push_back(root->data);
+//         max_curr=curr;
+//     }
+    
+//     preorder(root->right,ans,max_curr,curr+1);
+//     preorder(root->left,ans,max_curr,curr+1);
+// }
+
+//     vector<int> rightView(Node *root)
+//     {
+//       // Your Code here
+//       int max_curr=0;
+//       vector<int>ans;
+//       preorder(root,ans,max_curr,1);
+//       return ans;
+//     }
+    
 };
 
 
