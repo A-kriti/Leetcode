@@ -127,12 +127,11 @@ class Solution{
     	        reverse(v.begin(),v.end());
     	    }
     	    
-    	   for(int i=0;i<v.size();i++){
+    	    for(int i=0;i<v.size();i++){
     	       ans.push_back(v[i]);
-    	   }
-    	   b=!b;
+    	    }
+    	    b=!b;
     	   
-    	    
     	   // if(b){
     	   //     for(int i=0;i<v.size();i++){
     	   //         ans.push_back(v[i]);
