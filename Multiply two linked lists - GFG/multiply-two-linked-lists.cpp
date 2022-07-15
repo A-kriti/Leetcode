@@ -142,7 +142,7 @@ long long  multiplyTwoLists (Node* l1, Node* l2)
 {
   //Your code here
   int m=10e8+7;
-  //int m= 1000000007;
+  
   long long x=0;
   long long y=0;
   string s1="";
@@ -157,11 +157,7 @@ long long  multiplyTwoLists (Node* l1, Node* l2)
       y=(y*10+l2->data)%m;
       l2=l2->next;
   }
-  
-//   long long x=stoll(s1,nullptr, 10)%m;
-//   long long y=stoll(s2,nullptr, 10)%m;
-//   int x=1;
-//   int y=2;
+
   
   long long z=(x*y)%m;
   
