@@ -27,27 +27,7 @@ public:
     int kthSmallest(TreeNode* root, int k) {
         
         int c=0;
-        
         inorder(root,k,c);
         return ans;
-//         priority_queue<int>p;
-        
-//         TreeNode* l=root->left;
-//         TreeNode* r=root->right;
-        
-//         while(l){
-//             int x=l->val;
-//             p.push(x);
-//             l=l->left;
-            
-//         }
-        
-//         while(r){
-//             int x=r->val;
-//             p.push(x);
-//             r=r->right;
-            
-//         }
-        
     }
 };
