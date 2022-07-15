@@ -57,22 +57,36 @@ int main() {
 // Function to search a node in BST.
 bool search(Node* root, int x) {
     // Your code 
-    queue<Node*>q;
-    q.push(root);
+    if(!root)return false;
     
-    while(!q.empty()){
-       
-            Node* t=q.front();
-            q.pop();
-            
-            if(t->data==x){
-                return true;
-            }
+    while(root!=NULL){
+        if(root->data==x)return true;
         
-            if(t->left!=NULL)q.push(t->left);
-            if(t->right!=NULL)q.push(t->right);
+        else if(root->data<x){
+            root=root->right;
+        }
         
+        else root=root->left;
     }
-    
     return false;
+    
+    //method 2
+    // queue<Node*>q;
+    // q.push(root);
+    
+    // while(!q.empty()){
+       
+    //         Node* t=q.front();
+    //         q.pop();
+            
+    //         if(t->data==x){
+    //             return true;
+    //         }
+        
+    //         if(t->left!=NULL)q.push(t->left);
+    //         if(t->right!=NULL)q.push(t->right);
+        
+    // }
+    
+    // return false;
 }
