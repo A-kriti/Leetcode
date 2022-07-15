@@ -97,23 +97,23 @@ struct Node {
 class Solution
 {
     public:
-     void findSmallest(Node* root, int& k, int& res){
+     void findlargest(Node* root, int& k, int& res){
         if( !root ) return;
-        if( root->right ) findSmallest(root->right, k, res);
+        if( root->right ) findlargest(root->right, k, res);
         
         k--;
         if( k == 0 ){
             res = root->data;
             return;
         }
-        if( root->left ) findSmallest(root->left, k, res);
+        if( root->left ) findlargest(root->left, k, res);
     }
     
     int kthLargest(Node *root, int K)
     {
         //Your code here
         int ans=-1;
-        findSmallest(root,K,ans);
+        findlargest(root,K,ans);
         return ans;
     }
 };
