@@ -15,7 +15,11 @@ public:
         for(int i=1;i<=n;i++){
             for(int j=1;j<=amount;j++){
                 if(coins[i-1]<=j)
-                    t[i][j]=t[i][j-coins[i-1]]+t[i-1][j];
+                        
+                    //t[i][j-coins[i-1]] = coin included and can use mutiple time
+                    //t[i-1][j]= coin excluded
+                        
+                    t[i][j]=t[i][j-coins[i-1]]+t[i-1][j];  
                 else
                     t[i][j]=t[i-1][j];
             }
