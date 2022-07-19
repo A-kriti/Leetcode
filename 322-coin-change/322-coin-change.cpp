@@ -9,12 +9,6 @@ public:
             for(int j=0;j<=amount;j++){
                 if(i==0)t[i][j]=INT_MAX-1;
                 if(j==0)t[i][j]=0;
-                // if(i==1){
-                //     if(j%coins[0]){
-                //         t[i][j]=i/coins[0];
-                //     }
-                //     else t[i][j]=INT_MAX-1;
-                // }
             }
         }
         
