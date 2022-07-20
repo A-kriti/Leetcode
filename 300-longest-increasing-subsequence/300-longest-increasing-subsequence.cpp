@@ -3,11 +3,9 @@ public:
     
     int ceil_index(int v[],int r,int x){
         
-        
         int l=0;
         
         while(l<r){
-            //int m=l+(r-l)/2;
             int m=(r+l)/2;
             if(v[m]>=x){
                 r=m;
@@ -35,11 +33,6 @@ public:
                 v[x]=nums[i];
             }
         }
-        
-        // int m=INT_MIN;
-        // for(int i=0;i<n;i++){
-        //     m=max(m,v[i]);
-        // }
         return len;
     }
 };
