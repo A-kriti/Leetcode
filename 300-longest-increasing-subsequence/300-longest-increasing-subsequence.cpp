@@ -7,8 +7,8 @@ public:
         int l=0;
         
         while(l<r){
-            int m=l+(r-l)/2;
-            
+            //int m=l+(r-l)/2;
+            int m=(r+l)/2;
             if(v[m]>=x){
                 r=m;
             }
