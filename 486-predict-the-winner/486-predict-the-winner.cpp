@@ -22,8 +22,8 @@ public:
             sum+=nums[i];
         }
         
-        int u=sol(nums,0,n-1);
-        int v=sum-u;
-        return u>=v;
+        int max_sum_p1=sol(nums,0,n-1); //max sum possible for player 1
+        int max_sum_p2=sum-max_sum_p1;  //max sum possible for player 2
+        return max_sum_p1>=max_sum_p2; // player 1 can win only if max_sum_p1>=max_sum_p2
     }
 };
