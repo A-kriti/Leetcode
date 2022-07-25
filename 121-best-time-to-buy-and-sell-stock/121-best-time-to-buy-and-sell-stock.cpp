@@ -3,7 +3,7 @@ public:
     int maxProfit(vector<int>& prices) {
         
         int n=prices.size();
-        int m=INT_MIN;
+        int m=0;
         int i=0;
         int j=1;
         
@@ -14,8 +14,8 @@ public:
             }
             
             if(prices[j]-prices[i]>m){
-                int t=prices[j]-prices[i];                 
-                m=max(m,t);
+                
+                m=prices[j]-prices[i];
             }
             
             
@@ -23,6 +23,6 @@ public:
             
         }
         
-        return (m>0)?m:0;
+        return m;
     }
 };
