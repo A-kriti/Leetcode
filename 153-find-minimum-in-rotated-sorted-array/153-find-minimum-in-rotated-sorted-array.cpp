@@ -30,18 +30,6 @@ public:
         int n=nums.size();
         int m=index(nums);
         
-//         if(m==0)return nums[0];
-        
-//         int ans=INT_MAX;
-        
-//         for(int i=0;i<m;i++){
-//             ans=min(ans,nums[i]);
-//         }
-        
-//         for(int i=m;i<n;i++){
-//             ans=min(ans,nums[i]);
-//         }
-        
         return nums[m];
     }
 };
