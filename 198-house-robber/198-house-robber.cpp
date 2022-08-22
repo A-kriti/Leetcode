@@ -15,8 +15,8 @@ public:
         
         for(int i=3;i<n;i++){
             
-            int inc=nums[i]+max(v[i-2],v[i-3]);
-            int exc=v[i-1];
+            int inc=nums[i]+max(v[i-2],v[i-3]); //include
+            int exc=v[i-1];  //exclude
             v[i]=max(inc,exc);
         }
         
