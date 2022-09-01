@@ -20,36 +20,46 @@ public:
             s.insert(nums[i]);
         }   
         
+        vector<int>v(s.begin(),s.end());
+        priority_queue<int,vector<int>,greater<int>>p;
         
-        //int n=nums.size();
-        
-        int m1=INT_MIN;
-        for(int i=0;i<n;i++){
-            m1=max(m1,nums[i]);
+        for(int i=0;i<v.size();i++){
+            
+            p.push(v[i]);
+            
+            if(p.size()>3)p.pop();
         }
         
-        int m2=INT_MIN;
-        for(int i=0;i<n;i++){
-            if(nums[i]!=m1){
-                m2=max(m2,nums[i]);
-            }
+        if(p.size()==2){
+            p.pop();
+            return p.top();
         }
         
-        int m3=INT_MIN;
-        for(int i=0;i<n;i++){
-            if(nums[i]!=m1 && nums[i]!=m2){
-                m3=max(m3,nums[i]);
-            }
-        }
+        return p.top();
         
-        if(s.size()<=2)return m1;   
         
-        // 1 2 2 2
-        //m1=2
-        //m2=1
-        //if(m3==INT_MIN && m1!=INT_MIN)return m1;
-        //if(m2==INT_MAX && m1!=INT_MIN)return m1;
-        return m3;
+//         int m1=INT_MIN;
+//         for(int i=0;i<n;i++){
+//             m1=max(m1,nums[i]);
+//         }
+        
+//         int m2=INT_MIN;
+//         for(int i=0;i<n;i++){
+//             if(nums[i]!=m1){
+//                 m2=max(m2,nums[i]);
+//             }
+//         }
+        
+//         int m3=INT_MIN;
+//         for(int i=0;i<n;i++){
+//             if(nums[i]!=m1 && nums[i]!=m2){
+//                 m3=max(m3,nums[i]);
+//             }
+//         }
+        
+//         if(s.size()<=2)return m1;   
+        
+//         return m3;
         
         
     }
