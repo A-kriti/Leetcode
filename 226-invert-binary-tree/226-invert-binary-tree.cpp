@@ -14,7 +14,6 @@ public:
     TreeNode* invertTree(TreeNode* root) {
         
         if(!root)return root;
-        
         TreeNode* t=root->left;
         root->left=root->right;
         root->right=t;
@@ -24,5 +23,4 @@ public:
         
         return root;
     }
-        
 };
