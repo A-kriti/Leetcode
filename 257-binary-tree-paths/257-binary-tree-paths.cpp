@@ -11,30 +11,29 @@
  */
 class Solution {
 public:
+    vector<string> binaryTreePaths(TreeNode* root) {
+        vector<string>v;
+        string s="";
+        preorder(root,v,s);
+        return v;
+    }
     
-    void preorder(vector<string>&v, string s,TreeNode* root){
+    void preorder(TreeNode* root,vector<string>&v,string s){
         
         if(!root)return;
         
         s+=to_string(root->val);
         s+="->";
         
+        
         if(!root->left && !root->right){
             s.pop_back();
             s.pop_back();
-            v.push_back(s);     
+            v.push_back(s);
         }
         
-        preorder(v,s,root->left);
-        preorder(v,s,root->right);
+        preorder(root->left,v,s);
+        preorder(root->right,v,s);
     }
     
-    
-    vector<string> binaryTreePaths(TreeNode* root) {
-        
-        vector<string>v;
-        string s="";
-        preorder(v,s,root);
-        return v;   
-    }
 };
