@@ -1,12 +1,12 @@
 class Solution {
 public:
-    vector<vector<int>>s;
+    vector<vector<int>>ans;
     
     void fun(vector<int>& candidates, int target,vector<int>v,int i){
         
         if(target==0){
             
-            s.push_back(v);
+            ans.push_back(v);
         }
         
         while(i<candidates.size() && target-candidates[i]>=0){
@@ -25,8 +25,6 @@ public:
         vector<int>v;
         fun(candidates,target,v,0);
         
-        //vector<vector<int>>ans(s.begin(),s.end());
-        
-        return s;
+        return ans;
     }
 };
