@@ -11,51 +11,28 @@
  */
 class Solution {
 public:
-       bool hasPathSum(TreeNode* root, int targetSum, int c=0) {
-           
-           if(!root)return false;
-           
-           c+=root->val;
-           if(root->left==NULL && root->right==NULL){
-               if(c==targetSum)return true;
-           }
-           
-           return hasPathSum(root->left,targetSum,c) || hasPathSum(root->right,targetSum,c);
-           
-       }
-             
-             
-//     bool hasPathSum(TreeNode* root, int targetSum) {
-        
-//         int sum=0;
-//         vector<int>v;
-        
-//         preorder(root,v,sum);
-        
-//         for(int x:v){
-//             if(x==targetSum)return true;
-//         }
-        
-//         return false;
-        
-//     }
+    bool b=0;
     
-//     void preorder(TreeNode* root,vector<int> &v,int sum){
+    void preorder(int s,int targetSum,TreeNode* root){
         
-//         if(!root){
-            
-//             return;
-//         }
+        if(!root)return;
         
-//         sum+=root->val;
+        s+=(root->val);
         
-//         if(root->left==NULL && root->right==NULL){
-//             v.push_back(sum);
-//             return;
-//         }
+        if(!root->left && !root->right){
+            if(s==targetSum){
+                b=1;
+            }
+        }
         
-//         preorder(root->left,v,sum);
-//         preorder(root->right,v,sum);
-//     }
-    
+        preorder(s,targetSum,root->left);
+        preorder(s,targetSum,root->right);
+    }
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        
+        int s=0;
+        preorder(s,targetSum,root);
+        
+        return b;
+    }
 };
