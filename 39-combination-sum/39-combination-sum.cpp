@@ -3,7 +3,7 @@ public:
     
     vector<vector<int>>ans;
     
-    void fucn(vector<int>& candidates, int target,vector<int>v,int i){
+    void genrate(vector<int>& candidates, int target,vector<int>v,int l){
         
         int n=candidates.size();
         if(target==0){
@@ -11,22 +11,20 @@ public:
             return;
         }
         
-        while(i<n && target-candidates[i]>=0){
-            
+        if(target<0)return;
+        
+        for(int i=l;i<n;i++){
             v.push_back(candidates[i]);
-            fucn(candidates,target-candidates[i],v,i);
-            i++;
+            genrate(candidates,target-candidates[i],v,i);
             v.pop_back();
         }
-        
     }
-        
+    
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         
-        vector<int>v;
         sort(candidates.begin(),candidates.end());
-        
-        fucn(candidates,target,v,0);
+        vector<int>v;
+        genrate(candidates,target,v,0);
         return ans;
     }
 };
