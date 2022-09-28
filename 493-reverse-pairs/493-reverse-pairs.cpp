@@ -5,6 +5,7 @@ public:
         int l=mid+1;
         int c=0;
         for(int i=left;i<=mid;i++){
+            //2LL is a 2 of type long long.
             while(l<=right && nums[i]> 2LL *nums[l]){
                 l++;
             }
@@ -76,13 +77,6 @@ public:
     int reversePairs(vector<int>& nums) {
         
         int n=nums.size();
-        return mergesort(nums,0,n-1);
-        
-//         for(int x:nums){
-//             cout<<x<<" ";
-//         }
-        
-//         return 0;
-        
+        return mergesort(nums,0,n-1);       
     }
 };
