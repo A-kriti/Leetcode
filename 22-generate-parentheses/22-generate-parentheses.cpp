@@ -1,21 +1,23 @@
 class Solution {
 public:
+    
     vector<string>v;
     
-    void genrate(string s,int open_count,int close_count,int n){
+    void genrate(int n,string s,int lc,int rc){
         
         if(s.size()==2*n){
             v.push_back(s);
             return;
         }
         
-        if(open_count<n)genrate(s+"(",open_count+1,close_count,n);
-        if(close_count<open_count)genrate(s+")",open_count,close_count+1,n);
+        if(lc<n)genrate(n,s+"(",lc+1,rc);
+        if(rc<lc)genrate(n,s+")",lc,rc+1);
+        
     }
     
     vector<string> generateParenthesis(int n) {
         
-        genrate("(",1,0,n);
+        genrate(n,"(",1,0);
         return v;
     }
 };
