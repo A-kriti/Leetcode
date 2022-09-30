@@ -1,29 +1,38 @@
 class Solution {
 public:
-    set<string>v;
+    vector<string>v;
     
     void genrate(string in,string out){
         
         if(in.size()==0){
-            v.insert(out);
+            v.push_back(out);
             return;
         }
         
         string out1=out;
         string out2=out;
         
-        out1+=toupper(in[0]);
-        out2+=tolower(in[0]);
+        if(isalpha(in[0])){
+            
+            out1+=toupper(in[0]);
+            out2+=tolower(in[0]);
+
+            in.erase(in.begin()+0);
+            genrate(in,out1);
+            genrate(in,out2);
+        }
+        else{
+            out1+=(in[0]);
         
-        in.erase(in.begin()+0);
-        genrate(in,out1);
-        genrate(in,out2);
+            in.erase(in.begin()+0);
+            genrate(in,out1);
+        }
+        
     }
     
     vector<string> letterCasePermutation(string s) {
         
         genrate(s,"");
-        vector<string>v1(v.begin(),v.end());
-        return v1;
+        return v;
     }
 };
