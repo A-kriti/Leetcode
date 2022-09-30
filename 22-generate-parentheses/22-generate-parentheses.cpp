@@ -15,7 +15,7 @@ public:
     
     vector<string> generateParenthesis(int n) {
         
-        genrate("(",1,0,n);
+        genrate("",0,0,n);
         return v;
     }
 };
