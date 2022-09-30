@@ -3,7 +3,7 @@ public:
     
     vector<string>v;
     
-    void genrate(string &digits,map<int,string>&m,string &s,int l){
+    void genrate(string &digits,map<int,string>&m,string s,int l){
         
         if(s.size()==digits.size()){
             v.push_back(s);
@@ -15,7 +15,6 @@ public:
             s+=m[t][i];
             genrate(digits,m,s,l+1);
             s.pop_back();
-            //s=s.substr(0,l);
         }
     }
     
@@ -32,8 +31,7 @@ public:
         m.insert({9,"wxyz"});
         
         if(digits.size()==0)return v;
-        string s="";
-        genrate(digits,m,s,0);
+        genrate(digits,m,"",0);
         return v;
         
     }
