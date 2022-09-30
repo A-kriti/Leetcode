@@ -10,6 +10,6 @@ public:
             return kthGrammar(n-1,k);
         }
         
-        else return !kthGrammar(n-1,k-mid);
+        return !kthGrammar(n-1,k-mid);
     }
 };
