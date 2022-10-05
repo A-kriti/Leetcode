@@ -1,3 +1,5 @@
+// q -> https://practice.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1
+
 // { Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
