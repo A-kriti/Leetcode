@@ -13,8 +13,6 @@ public:
                 j=i+1;
             }
             
-           // if(nums[j])
-            
             else if(nums[j]!=0 && nums[i]==0){
                 swap(nums[i],nums[j]);
                 j++;
@@ -22,7 +20,6 @@ public:
             }
             
             else{
-
                 j++;
             }
         }
