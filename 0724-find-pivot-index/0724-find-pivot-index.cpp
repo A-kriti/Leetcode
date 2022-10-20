@@ -6,8 +6,6 @@ public:
         vector<int>l(n);
         vector<int>r(n);
         
-        
-        
         int lsum=0;
         int rsum=0;
         
