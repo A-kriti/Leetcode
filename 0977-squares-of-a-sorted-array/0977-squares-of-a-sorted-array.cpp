@@ -8,7 +8,6 @@ public:
         int i=0;
         int j=n-1;
         
-        //for(int i=0;i<n;i++){
         while(i<=j){
             
             int l=nums[i]*nums[i];
