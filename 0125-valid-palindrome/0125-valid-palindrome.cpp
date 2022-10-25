@@ -1,9 +1,9 @@
 class Solution {
 public:
+  
     bool isPalindrome(string s) {
         
         int n=s.size();
-        
         string t="";
         
         for(int i=0;i<n;i++){
@@ -27,7 +27,7 @@ public:
             
         }
         
-        return true;
+        return true; 
         
     }
 };
