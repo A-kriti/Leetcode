@@ -1,22 +1,16 @@
 class Solution {
 public:
     
-    void dfs(vector<int>adj[],int i,bool vis[],int n){
+    void dfs(vector<int>adj[],int i,bool vis[]){
         
         vis[i]=1;
         for(auto x:adj[i]){
             if(vis[x]==0){
-                dfs(adj,x,vis,n);
+                dfs(adj,x,vis);
             }
         }
             
     }
-    
-    // 1 0 0 1
-    // 0 1 1 0
-    // 0 1 1 1
-    // 1 0 1 1
-    
     
     int findCircleNum(vector<vector<int>>& isConnected) {
         
@@ -37,13 +31,12 @@ public:
             }
         }
         
-        
         int c=0;
         
         for(int i=0;i<n;i++){
             if(vis[i]==0){
                 c++;
-                dfs(adj,i,vis,n);
+                dfs(adj,i,vis);
             }
         }
         
