@@ -1,24 +1,15 @@
 class Solution {
 public:
     
-    void bfs(vector<int>adj[],int i,bool vis[],int n){
+    void dfs(vector<int>adj[],int i,bool vis[],int n){
         
-        //int n=isConnected.size();
-        queue<int>q;
-        q.push(i);
         vis[i]=1;
-        
-        while(!q.empty()){
-            int temp=q.front();
-            q.pop();
-            for(int x:adj[temp]){
-                if(vis[x]==0){
-                    vis[x]=1;
-                    q.push(x);
-                }
+        for(auto x:adj[i]){
+            if(vis[x]==0){
+                dfs(adj,x,vis,n);
             }
         }
-        
+            
     }
     
     // 1 0 0 1
@@ -52,7 +43,7 @@ public:
         for(int i=0;i<n;i++){
             if(vis[i]==0){
                 c++;
-                bfs(adj,i,vis,n);
+                dfs(adj,i,vis,n);
             }
         }
         
