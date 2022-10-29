@@ -2,11 +2,7 @@ class Solution {
 public:
     
     int orangesRotting(vector<vector<int>>& grid) {
-        
-        // 2 1 1
-        // 0 1 1
-        // 1 0 1
-        
+       
         int c=0;
         int n=grid.size();
         int m=grid[0].size();
